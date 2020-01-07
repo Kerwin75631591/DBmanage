@@ -1,0 +1,178 @@
+body{
+    background:url(../images/Background.jpg);
+    background-origin:content;
+    background-position:center 0;
+    background-size:cover; 
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    position:absolute;
+    min-width:100%;
+    height:100%;
+    padding: 0px;
+    line-height: 0;
+    overflow: hidden;
+}
+
+#LoginSTitle{
+	font-family: 'HANYIXUEJUN';
+	font-size:60px;
+	color:white;
+	position:fixed;
+	margin-top:10%;
+	margin-left:520px;
+	min-width:200px;
+}
+#LoginBox{
+	position:fixed;
+    border: 1px solid #E2E3E5;
+    width: 300px;
+	height: 250px;
+	box-shadow: 10px 10px 30px #888888;
+	background:#FFFFFF;
+	margin-left:530px;
+	margin-top:200px;
+	opacity:0.85;
+}
+input {outline:none;}
+#IDInput{
+	position:relative;
+	width:80%;
+	height:13%;
+	display:inline-block;
+	vertical-align:middle;
+	font-size:120%;
+	margin-top:8%;
+	margin-left:10%;
+}
+#PasswordInput{
+	position:relative;
+	width:80%;
+	height:13%;
+	display:inline-block;
+	vertical-align:middle;
+	font-size:120%;
+	margin-top:8%;
+	margin-left:10%
+}
+#VericodeInput{
+	position:relative;
+	width:50%;
+	height:10%;
+	display:inline-block;
+	vertical-align:middle;
+	font-size:120%;
+	margin-top:8%;
+	margin-left:10%
+}
+#LoginVericodePic{
+	position:relative;
+	background:url(../images/yanzhengma.jpg);
+	background-repeat:no-repeat;
+	border: 1px solid #E2E3E5;
+	width:69px;
+	height:30px;
+	margin-left:67%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-top:-16%;
+}
+.logbutton{
+	position:relative;
+	background: #0cea06;
+    border: none;
+    color: white;
+    margin-top: 8%;
+    margin-left:15%;
+    font-family: "Montserrat", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    width:70%;
+    height:13%;
+    font-size:130%;
+}
+.logbutton:hover {
+    background: #2db618;
+}
+.form-control {
+  display: block;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form-control::-webkit-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.form-control::-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.form-control:disabled, .form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+select.form-control:focus::-ms-value {
+  color: #495057;
+  background-color: #fff;
+}
+.form-control-range {
+  display: block;
+
+}
+.form-control-plaintext {
+  display: block; 
+  margin-bottom: 0;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: 1px 0;
+}
+.rbutton{
+	position:relative;
+	background: #FFFFFF;
+    border: none;
+    color: #000000;
+    margin-left:25px;
+    margin-top:10px;
+    margin-bottom:5%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    width:150px;
+    height:30px;
+    font-size:130%;
+    box-shadow: 0px 1px 3px rgba(34, 25, 25, 0.2);
+    border: 1px solid #E2E3E5;
+    display:inline-block;
+	vertical-align:middle;
+	font: bold 130% Arial;
+}
+.rbutton:hover {
+    background: #C0C0C0;
+}
+
+    
