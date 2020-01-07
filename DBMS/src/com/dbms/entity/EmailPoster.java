@@ -59,23 +59,23 @@ public class EmailPoster {
         }
     }
     public static void sendRegCheck(String receiver, int check) {
-    	new EmailPoster(receiver).sendEmail("outbreak×¢²áÑéÖ¤Âë", "<p>×ğ¾´µÄÓÃ»§ÄúºÃ£¡</p><p>ÄúÔÚoutbreak»áÒé¹ÜÀíÏµÍ³×¢²áµÄÑéÖ¤ÂëÎª"+check+"</p>");
+    	new EmailPoster(receiver).sendEmail("outbreakå¨‰ã„¥å”½æ¥ å²ƒç˜‰é®ï¿½", "<p>çå©ƒæššé¨å‹­æ•¤é´é”‹åæ¿‚æ–¤ç´’</p><p>é®ã„¥æ¹ªoutbreakæµ¼æ°³î†…ç» ï¼„æ‚Šç»¯è¤ç²ºå¨‰ã„¥å”½é¨å‹¯ç™ç’‡ä½ºçˆœæ¶“ï¿½"+check+"</p>");
     }
     public static void sendPwResetCheck(String receiver, int check) {
-    	new EmailPoster(receiver).sendEmail("ÖØÖÃÃÜÂë", "<p>×ğ¾´µÄÓÃ»§ÄúºÃ£¡</p><p>ÄúÖØÖÃÃÜÂëµÄÑéÖ¤ÂëÎª"+check+"£¬Çë²»Òª½«ÑéÖ¤ÂëĞ¹Â©¸øËûÈË</p>");
+    	new EmailPoster(receiver).sendEmail("é–²å¶‡ç–†ç€µå—™çˆœ", "<p>çå©ƒæššé¨å‹­æ•¤é´é”‹åæ¿‚æ–¤ç´’</p><p>é®ã„©å™¸ç¼ƒî†¼ç˜‘é®ä½ºæ®‘æ¥ å²ƒç˜‰é®ä½·è´Ÿ"+check+"é”›å²ƒî‡¬æ¶“å¶ˆî›¦çå—›ç™ç’‡ä½ºçˆœå¨‰å‹¬ç´¡ç¼æ¬ç²¬æµœï¿½</p>");
     }
     public static void sendIfInvited(String receiver, String topic, boolean hasRegistered) {
-    	String content="<p>×ğ¾´µÄÓÃ»§ÄúºÃ£¬</p><p>ÄúÔÚoutbreak»áÒé¹ÜÀíÏµÍ³ÖĞÊÜÑû²Î¼Ó"+topic+"»áÒé</p>";
+    	String content="<p>çå©ƒæššé¨å‹­æ•¤é´é”‹åæ¿‚æ–¤ç´</p><p>é®ã„¥æ¹ªoutbreakæµ¼æ°³î†…ç» ï¼„æ‚Šç»¯è¤ç²ºæ¶“î…å½ˆé–­ï¿½é™å‚šå§"+topic+"æµ¼æ°³î†…</p>";
     	if(hasRegistered) {
-    		content+="<p>Äú¿ÉÒÔÔÚÎ¢ĞÅĞ¡³ÌĞòÖĞ²é¿´»áÒéµÄÏêÏ¸ĞÅÏ¢</p>";
+    		content+="<p>é®ã„¥å½²æµ ãƒ¥æ¹ªå¯°î†»ä¿Šçå¿•â–¼æ´å¿è…‘éŒãƒ§æ¹…æµ¼æ°³î†…é¨å‹®î‡›ç¼å—•ä¿Šé­ï¿½</p>";
     	}else {
-    		content+="<p>Äú¿ÉÒÔÔÚÎ¢ĞÅĞ¡³ÌĞòÖĞ²é¿´»áÒéµÄÏêÏ¸ĞÅÏ¢£¬ÕÊºÅÎªÄúµÄÓÊÏä£¬Ä¬ÈÏÃÜÂëÎªoutbreak123</p>";
+    		content+="<p>é®ã„¥å½²æµ ãƒ¥æ¹ªå¯°î†»ä¿Šçå¿•â–¼æ´å¿è…‘éŒãƒ§æ¹…æµ¼æ°³î†…é¨å‹®î‡›ç¼å—•ä¿Šé­îˆ¤ç´ç”¯æ„¬å½¿æ¶“çƒ˜åé¨å‹¯å–ç» æ†‹ç´æ¦›æ¨¿î…»ç€µå—™çˆœæ¶“ç°…utbreak123</p>";
     	}
-    	new EmailPoster(receiver).sendEmail("»áÒéÊÜÑû", content);
+    	new EmailPoster(receiver).sendEmail("æµ¼æ°³î†…é™æ¥…å€‹", content);
     }
     public static void test(){
         EmailPoster emailPoster=new EmailPoster("383250208@qq.com");
-        emailPoster.sendEmail("»áÒéÌáĞÑ","OUTBREAK»áÒé¹ÜÀíÏµÍ³ÌáĞÑÄú£º\nÄúÃ÷ÌìÔÚ231ÓĞÒ»¸ö»áÒé²Î¼Ó");
+        emailPoster.sendEmail("æµ¼æ°³î†…é»æ„°å•‹","OUTBREAKæµ¼æ°³î†…ç» ï¼„æ‚Šç»¯è¤ç²ºé»æ„°å•‹é®îŸ’ç´°\né®ã„¦æ§‘æ¾¶â•æ¹ª231éˆå¤‰ç«´æ¶“îƒç´°ç’î†¼å¼¬é”ï¿½");
     }
     public static void testRegCheck() {
     	EmailPoster.sendRegCheck("383250208@qq.com", 154396);
@@ -84,7 +84,7 @@ public class EmailPoster {
         //test();
         //EmailPoster.test();
     	//EmailPoster.testRegCheck();
-    	//EmailPoster.sendIfInvited("383250208@qq.com", "¼Ó°à", false);
+    	//EmailPoster.sendIfInvited("383250208@qq.com", "é”çŠµå½®", false);
     	EmailPoster.sendPwResetCheck("383250208@qq.com", 123456);
     }
 }
