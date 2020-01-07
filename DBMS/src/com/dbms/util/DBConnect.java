@@ -6,12 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 
-import com.dbms.entity.InvitedPeople;
+import com.dbms.entity.Book;
 
 public class DBConnect {
 	public Connection connection = null;
@@ -103,112 +101,67 @@ public class DBConnect {
 		}
 	}
 
-	// 在MeetingTable中加入新的数据
-	public int insertMeeting(int state, String begintime, String endtime, String place, String name, String topic,
-			String content, String host, int PeopleNum, int ArrivalNum, String FileUrl) throws SQLException {
-		String sql = "SELECT id FROM MeetingTable ";
-		rs = statement.executeQuery(sql);
-		int id = 0;
-		while (rs.next()) {
-			id = rs.getInt("id");
-		}
-		id = id + 1;
-		sql = "INSERT INTO MeetingTable(id,begintime,endtime,place,name,topic,content,host,state,PeopleNum,ArrivalNum,FileUrl,Assessment)"
-				+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	// 在book中加入新的数据
+	public int insertbook(String isbn, String bname, String author,int price,int storage,int avaliblity) throws SQLException {
+		String sql = "INSERT INTO book(isbn,bname,author,price,storage,avaliblity)values(?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
-		pstmt.setInt(1, id);
-		pstmt.setString(2,begintime);
-		pstmt.setString(3,endtime);
-		pstmt.setString(4, place);
-		pstmt.setString(5, name);
-		pstmt.setString(6, topic);
-		pstmt.setString(7, content);
-		pstmt.setString(8, host);
-		pstmt.setInt(9, state);
-		pstmt.setInt(10, PeopleNum);
-		pstmt.setInt(11, ArrivalNum);
-		pstmt.setString(12, FileUrl);
-		pstmt.setInt(13, 0);
+		pstmt.setString(1,isbn);
+		pstmt.setString(2,bname);
+		pstmt.setString(3,author);
+		pstmt.setInt(4, price);
+		pstmt.setInt(5, storage);
+		pstmt.setInt(6, avaliblity);
 		pstmt.addBatch();
 		pstmt.clearParameters();
 		pstmt.executeBatch();
 		pstmt.clearBatch();
 
-		return id;
+		return avaliblity;
 	}
 
-	// 在MeetingTable中删除数据
-	public void deleteMeeting(Date time, String name) throws SQLException {
-		String sql = "DELETE FROM MeetingTable WHERE begintime = " + time + " And name = " + name;
-		statement.execute(sql);
-	}
-
-	// MeetingTable搜索某人举办的会议，返回resultset
-	public ResultSet searchMeeting(String host) throws SQLException {
-		String sql = "SELECT * FROM MeetingTable WHERE host = '" + host + "'";
+	// book搜索，返回resultset
+	public ResultSet searchbook(String searchid,int mode) throws SQLException {
+		String sql=null;
+		if(mode==1)
+			sql = "SELECT * FROM book WHERE isbn = '" + searchid + "'";
+		else if(mode==2)
+			sql = "SELECT * FROM book WHERE bname = '" + searchid + "'";
+		else if(mode==3)
+			sql = "SELECT * FROM book WHERE author = '" + searchid + "'";
 		rs = statement.executeQuery(sql);
 		return rs;
 	}
 
-	// MeetingTable搜索该id会议，返回resultset
-	public ResultSet searchMeeting(int id) throws SQLException {
-		String sql = "SELECT * FROM MeetingTable WHERE id = '" + id + "'";
+
+	// book修改数量
+	public void updateBookNum(int isbn, int num) throws SQLException {
+		String sql="SELECT storage FROM book WHERE isbn = '" + isbn + "'";
 		rs = statement.executeQuery(sql);
-		return rs;
-	}
-
-	// MeetingTable搜索所有未提交的会议，返回resultset
-	public ResultSet searchChangableMeeting(String host) throws SQLException {
-		String sql = "SELECT * FROM MeetingTable WHERE state = 0  And host = '" + host + "'";
-		rs = statement.executeQuery(sql);
-		return rs;
-	}
-
-	// MeetingTable搜索的同名同时会议
-	public boolean searchMeeting(Date time, String name) throws SQLException {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-		String sql = "SELECT * FROM MeetingTable WHERE begintime = '" + sdf.format(time) + "' AND name = '" + name
-				+ "'";
-		System.out.println(sql);
-		rs = statement.executeQuery(sql);
-		boolean judge = true;
-		while (rs.next())
-			judge = false;
-		return judge;
-
-	}
-
-	// MeetingTable修改某个会议的状态
-	public void updateMeeting(int id, int state) throws SQLException {
-		String sql = "UPDATE MeetingTable SET state = " + state + " WHERE   id = '" + id + "'";
-		System.out.println(sql);
-		statement.executeUpdate(sql);
-
-	}
-	// MeetingTable修改某个会议的评估状态
-	public void updateAssessment(int id) throws SQLException {
-		String sql = "UPDATE MeetingTable SET Assessment = 1 WHERE   id = '" + id + "'";
+		while(rs.next()){
+			num+=rs.getInt("storage");
+		}
+		sql = "UPDATE book SET storage = " + num + " WHERE   isbn = '" + isbn + "'";
 		System.out.println(sql);
 		statement.executeUpdate(sql);
 
 	}
 
-	// 在PeopleTable中加入新的数据
-	public void insertPeople(int id, ArrayList<InvitedPeople> people) throws SQLException {
-		System.out.println("insertPeople已进入");
-		Iterator<InvitedPeople> it = people.iterator();
+	// 在order中加入新的数据
+	public void insertOrder(int oid,int uid, ArrayList<Book> books,String credit,String address) throws SQLException {
+		System.out.println("insertOrder已进入");
+		Iterator<Book> it = books.iterator();
 		while (it.hasNext()) {
-			InvitedPeople p = it.next();
-			System.out.println(p.getName() + "+" + p.getEmail());
+			Book p = it.next();
+			System.out.println(p.getIsbn() + "+" + p.getBuynum());
 
-			String sql = "INSERT INTO PeopleTable(Mid,uid,TOF,Email,PhoneNum)values(?,?,?,?,?)";
+			String sql = "INSERT INTO order(oid,uid,num,isbn,credit,address)values(?,?,?,?,?,?)";
 			PreparedStatement pstmt = connection.prepareStatement(sql);
-			pstmt.setInt(1, id);
-			pstmt.setString(2, p.getName());
-			pstmt.setBoolean(3, false);
-			pstmt.setString(4, p.getEmail());
-			pstmt.setString(5, p.getPhoneNumber());
+			pstmt.setInt(1, oid);
+			pstmt.setInt(2, uid);
+			pstmt.setInt(3, p.getBuynum());
+			pstmt.setString(4, p.getIsbn());
+			pstmt.setString(5, credit);
+			pstmt.setString(6, address);
 			pstmt.addBatch();
 			pstmt.clearParameters();
 			pstmt.executeBatch();
@@ -217,9 +170,9 @@ public class DBConnect {
 		}
 	}
 
-	// PeopleTable搜索所有该mid的会议，返回resultset
-	public ResultSet searchPeople(int mid) throws SQLException {
-		String sql = "SELECT * FROM PeopleTable WHERE mid = '" + mid + "'";
+	// order搜索所有该uid的会议，返回resultset
+	public ResultSet searchPeople(int uid) throws SQLException {
+		String sql = "SELECT * FROM order WHERE uid = '" + uid + "'";
 		rs = statement.executeQuery(sql);
 		return rs;
 	}
