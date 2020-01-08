@@ -8,8 +8,15 @@ import com.dbms.util.DBConnect;
 public class UserCL {
 
 	public DBConnect db;
+	
 	public UserCL() {
-		// TODO Auto-generated constructor stub
+		db = new DBConnect();
+		try {
+			db.connect();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public boolean Register(User ub) {

@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%String path = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link type="text/css" rel="stylesheet" href="../CSS/login.css">
+<link type="text/css" rel="stylesheet" href="../CSS/login.css"/>
 <title>login</title>
 	<script>
 		function checkL() {
@@ -21,14 +23,14 @@
 	</script>
 </head>
 <body>
-	<form action="/DBMS/LoginServlet" method="post">
+	<form action="LoginServlet" method="post">
    	<div id="JumpBox" style="width: 800px;height:50px;border: 1px solid #E2E3E5;box-shadow: 10px 10px 30px #888888;
                          background:#FFFFFF;opacity:0.85;">
    	<span style="margin-left:20px;margin-top:5%;font-size:20px;">Jump:</span>
-   	<input type="button" class="rbutton" value="Search" onclick="subForm()">
-   	<input type="button" class="rbutton" value="ShoppingCar" onclick="subForm()">
-   	<input type="button" class="rbutton" value="Help" onclick="subForm()">
-   	<input type="button" class="rbutton" value="Logout" onclick="subForm()">
+    <input type="button" class="rbutton" value="Search" onclick="window.location.href='search.jsp'">
+    <input type="button" class="rbutton" value="ShoppingCar" onclick="window.location.href='shoppingBasket'">
+    <input type="button" class="rbutton" value="Help" onclick="window.location.href='help.jsp'">
+    <input type="button" class="rbutton" value="Logout" onclick="Logout()">
    	</div>
      <div id="LoginSTitle">OUTBREAK</div>
      <div id="LoginBox">
