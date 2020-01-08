@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<% String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +23,7 @@
 <body>
 OUTBREAK BOOK STORE
 Please input
-<form action = "/SearchServlet" method="post">
+<form action = "<%=path %>/SearchServlet" method="post">
 	<span><input id="bookname" class="form-control" placeholder="bookname" name="BookName"></span>
 	<span><input id="author" class="form-control" placeholder="author" name="Author"></span>
 	<span><input id="isbn" class="form-control" placeholder="ISBN" name="ISBN"></span>
