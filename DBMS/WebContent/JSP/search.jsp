@@ -22,9 +22,9 @@
 OUTBREAK BOOK STORE
 Please input
 <form action = "/SearchServlet" method="post">
-	<span><input id="bookname" class="form-control" name="BookName"></span>
-	<span><input id="author" class="form-control" name="Author"></span>
-	<span><input id="isbn" class="form-control" name="ISBN"></span>
+	<span><input id="bookname" class="form-control" placeholder="bookname" name="BookName"></span>
+	<span><input id="author" class="form-control" placeholder="author" name="Author"></span>
+	<span><input id="isbn" class="form-control" placeholder="ISBN" name="ISBN"></span>
 	<input type="button" id="LoginInput" value="search" onclick="search()">
 </form>
 </body>

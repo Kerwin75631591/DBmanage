@@ -49,6 +49,5 @@ public class UserCL {
 			return true;
 		else
 			return false;
-
 	}
 }
