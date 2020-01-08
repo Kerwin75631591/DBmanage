@@ -41,9 +41,12 @@ public class RegisterServlet extends HttpServlet {
 		response.setContentType("GBK");
 		response.setCharacterEncoding("GBK");
 		
+		// Get username and password
 		String email=request.getParameter("Email");
 		String pw=request.getParameter("Password");
 
+		// Get ansolute path
+		String path = request.getContextPath();
 		
 		User u=new User();
 		Boolean success=false;
@@ -62,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
 				ubc.db.close();
 				request.getSession().setAttribute("sessionemail",u.getEmail()); 
 	    		request.getSession().setAttribute("sessionpwd",u.getPassword());
-				response.sendRedirect("./JSP/"+"home.jsp");
+				response.sendRedirect(path+"/JSP/"+"home.jsp");
 			}else{
 				ubc.db.close();
 				//response.sendRedirect("Register.jsp");

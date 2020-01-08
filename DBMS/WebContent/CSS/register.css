@@ -16,8 +16,8 @@ body{
 #RstTitle{
 	font-size:60px;
 	color:white;
-	margin-top:100px;
-	margin-left:550px;
+	margin-top:250px;
+	margin-left:950px;
 }
 #RegistBox{
     border: 1px solid #E2E3E5;
@@ -25,8 +25,8 @@ body{
 	height: 250px;
 	box-shadow: 10px 10px 30px #888888;
 	background:#FFFFFF;
-	margin-left:500px;
-	margin-top:50px;
+	margin-left:900px;
+	margin-top:100px;
 	opacity:0.85;
 	
 }
