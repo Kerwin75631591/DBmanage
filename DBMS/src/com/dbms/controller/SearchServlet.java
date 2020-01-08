@@ -13,7 +13,7 @@ import com.dbms.entity.Book;
 /**
  * Servlet implementation class SearchServlet
  */
-@WebServlet(name="searchServlet", urlPatterns="/SearchServlet")
+//@WebServlet(name="searchServlet", urlPatterns="/SearchServlet")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

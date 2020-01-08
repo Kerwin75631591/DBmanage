@@ -13,7 +13,7 @@ import com.dbms.entity.User;
 /**
  * Servlet implementation class RegisterServlet
  */
-@WebServlet("/RegisterServlet")
+//@WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -62,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
 				ubc.db.close();
 				request.getSession().setAttribute("sessionemail",u.getEmail()); 
 	    		request.getSession().setAttribute("sessionpwd",u.getPassword());
-				//response.sendRedirect(path+"/JSP/"+"MeetingManage.jsp");
+				response.sendRedirect("./JSP/"+"home.jsp");
 			}else{
 				ubc.db.close();
 				//response.sendRedirect("Register.jsp");

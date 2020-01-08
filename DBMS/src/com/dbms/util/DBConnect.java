@@ -46,14 +46,15 @@ public class DBConnect {
 	// 在User中加入新的数据
 	public void insertUser(String email, String password)
 			throws SQLException {
-		String sql = "SELECT id FROM User ";
+		System.out.println("写入user");
+		String sql = "SELECT uid FROM User ";
 		rs = statement.executeQuery(sql);
 		int id = 0;
 		while (rs.next()) {
-			id = rs.getInt("id");
+			id = rs.getInt("uid");
 		}
 		id = id + 1;
-		sql = "INSERT INTO User(id ,email ,password)values(?,?,?)";
+		sql = "INSERT INTO User(uid ,email ,password)values(?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, id);
 		pstmt.setString(2, email);
@@ -81,7 +82,7 @@ public class DBConnect {
 	public int searchUser(boolean judge, String email, String password) throws SQLException {
 		String sql = "SELECT*FROM User";
 		rs = statement.executeQuery(sql);
-		System.out.println("rs表已创建");
+		System.out.println("登录注册rs表已创建");
 		if (judge) {
 			while (rs.next()) {
 				if (email.equals(rs.getString("email"))) {

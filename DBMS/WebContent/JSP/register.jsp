@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
 </head>
 <body>
-<form action="<%=path %>RegisterServlet" method="post">
+<form action="<%=path %>/RegisterServlet" method="post">
 <div id="JumpBox" style="width: 800px;height:50px;border: 1px solid #E2E3E5;box-shadow: 10px 10px 30px #888888;
                          background:#FFFFFF;opacity:0.85;">
    <span style="margin-left:20px;margin-top:5%;font-size:20px;">Jump:</span>
