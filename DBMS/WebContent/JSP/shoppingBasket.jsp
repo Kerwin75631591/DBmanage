@@ -18,6 +18,13 @@
 </div>
 <div style="position:relative;border: 1px solid #E2E3E5;width: 650px;height: 400px;
 	        box-shadow: 10px 10px 30px #888888;background:#FFFFFF;margin-left:35%;margin-top:10%;opacity:0.85;">
+   <span style="font-size:30px;margin-right:20px">1</span>
+   <span style="font-size:30px;margin-right:20px">SQL</span>
+   <span style="font-size:30px;margin-right:20px">Xv</span>
+   <span style="font-size:30px;margin-right:20px">5763149425</span>
+   <span style="font-size:30px;margin-right:20px">45</span>
+   <span style="font-size:30px;margin-right:20px">1</span>
+   <span style="font-size:30px;margin-right:20px"><input type="text" value="" /></span>
 <input id="OrderBtn" type="button" class="rbutton" value="Checkout" onclick="subForm()">
 </div>
 </body>
