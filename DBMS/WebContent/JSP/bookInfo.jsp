@@ -22,12 +22,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        box-shadow: 10px 10px 30px #888888;background:#FFFFFF;margin-left:35%;margin-top:10%;opacity:0.85;">
    <div style="font-size:50px;margin-left:20px;">OUTBREAK BOOK STORE</div>
    <div style="margin-top:25px;">
-   <span style="font-size:30px;margin-right:20px">1</span>
-   <span style="font-size:30px;margin-right:20px">SQL</span>
-   <span style="font-size:30px;margin-right:20px">Xv</span>
-   <span style="font-size:30px;margin-right:20px">5763149425</span>
-   <span style="font-size:30px;margin-right:20px">45</span>
-   <span style="font-size:30px;margin-right:20px">1</span>
+   <span style="font-size:30px;margin-right:20px"></span>
+   <span style="font-size:30px;margin-right:20px"></span>
+   <span style="font-size:30px;margin-right:20px"></span>
+   <span style="font-size:30px;margin-right:20px"></span>
+   <span style="font-size:30px;margin-right:20px"></span>
+   <span style="font-size:30px;margin-right:20px"></span>
    <input id="OrderBtn" type="button" class="sendbutton" value="Hand on" onclick="subForm()">
    </div>
 </div>
