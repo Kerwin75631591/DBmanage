@@ -9,31 +9,36 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.dbms.controller.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.dbms.controller.RegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>com.dbms.controller.SearchServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SearchServlet</servlet-name>
-        <url-pattern>/SearchServlet</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.dbms.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.dbms.controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>com.dbms.controller.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/SearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CheckOutServlet</servlet-name>
+    <servlet-class>com.dbms.controller.CheckOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckOutServlet</servlet-name>
+    <url-pattern>/CheckOutServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

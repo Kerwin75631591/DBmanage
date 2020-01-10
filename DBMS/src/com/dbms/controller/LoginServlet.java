@@ -49,7 +49,11 @@ public class LoginServlet extends HttpServlet {
 		// Get the userName and Password
 		String uName = request.getParameter("LoginEmail");
 		String pwd = request.getParameter("LoginPassword");
+		
+		// Get ansolute path
+		//String path = request.getContextPath();
 
+		//System.out.println(path);
 		User u = new User();
 		u.setEmail(uName);
 		u.setPassword(pwd);

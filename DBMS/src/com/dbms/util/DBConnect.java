@@ -30,8 +30,10 @@ public class DBConnect {
 	public void connect() throws SQLException {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			//String dbURL = "jdbc:mysql://localhost:3306/"
+			//		+ "DBMSdb?user=root&password=749847569&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true";
 			String dbURL = "jdbc:mysql://localhost:3306/"
-					+ "DBMSdb?user=root&password=749847569&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true";
+					+ "DBMSdb?user=root&password=123456&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true";
 			connection = DriverManager.getConnection(dbURL);
 			statement = connection.createStatement();
 			System.out.println("数据库已连接");

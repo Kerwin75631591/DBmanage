@@ -15,10 +15,10 @@ body{
 
 #LoginSTitle{
 	font-family: 'HANYIXUEJUN';
-	font-size:60px;
+	font-size:100px;
 	color:white;
 	position:fixed;
-	margin-top:10%;
+	margin-top:500px;
 	margin-left:520px;
 	min-width:200px;
 }
@@ -29,8 +29,8 @@ body{
 	height: 250px;
 	box-shadow: 10px 10px 30px #888888;
 	background:#FFFFFF;
-	margin-left:530px;
-	margin-top:200px;
+	margin-left:1500px;
+	margin-top:400px;
 	opacity:0.85;
 }
 input {outline:none;}
