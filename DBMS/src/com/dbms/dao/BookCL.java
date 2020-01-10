@@ -22,7 +22,7 @@ public class BookCL {
 		}
 	}
 	
-	public  void Search(Book b) {
+	public  ResultSet Search(Book b) {
 		try {
 			if(!b.getIsbn().isEmpty()) {
 				rs = db.searchbook(b.getIsbn(), 1);
@@ -36,6 +36,37 @@ public class BookCL {
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
-		db.close();
+		return rs;
+	}
+	public int UpdateBook(Book b,int num) {
+		rs=Search(b);
+		try {
+			if(rs.next()) {
+				db.updateBookNum(b.getIsbn(), num);
+			}else {
+				return 1;
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 2;
+		}
+		return 0;
+	}
+	
+	public int InsertBook(Book b,int num) {
+		if(b.getIsbn().length()==10||b.getIsbn().length()==13) {
+			try {
+				db.insertbook(b.getIsbn(), b.getBname(), b.getAuthor(), b.getPrice(), b.getStorage(), b.getAvaliblity());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return 1;
+			}
+			
+		}else {
+			return 2;
+		}
+		return 0;
 	}
 }

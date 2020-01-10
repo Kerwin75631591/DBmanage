@@ -135,7 +135,7 @@ public class DBConnect {
 
 
 	// bookÐÞ¸ÄÊýÁ¿
-	public void updateBookNum(int isbn, int num) throws SQLException {
+	public void updateBookNum(String isbn, int num) throws SQLException {
 		String sql="SELECT storage FROM book WHERE isbn = '" + isbn + "'";
 		rs = statement.executeQuery(sql);
 		while(rs.next()){
