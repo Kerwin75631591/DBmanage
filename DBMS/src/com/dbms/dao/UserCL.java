@@ -50,4 +50,24 @@ public class UserCL {
 		else
 			return false;
 	}
+	public boolean delete(User ub) {
+		try {
+			db.deleteUser(ub.getEmail());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	public boolean update(User ub) {
+		try {
+			db.updateUserpassword(ub.getEmail(), ub.getPassword());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 }
